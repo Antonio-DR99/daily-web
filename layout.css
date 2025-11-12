@@ -1,0 +1,709 @@
+/* ======== ESTILOS GENERALES ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: url('./icons/background.png') center/cover no-repeat fixed;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Tahoma", sans-serif;
+  color: #fff;
+  background: transparent;
+}
+
+.contenido {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* ======== INTRO ======== */
+.container-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container-intro h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.container-intro p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ======== NOTICIA ESTILO WINDOWS 95 ======== */
+.noticia {
+  background-color: #c0c0c0;
+  color: #000;
+  padding: 10px 12px;
+  border: 2px solid #808080;
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #808080;
+  margin: 50px 0 10px 2%;
+  max-width: 700px;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.1s ease-in-out;
+}
+
+.noticia:hover {
+  box-shadow: inset 2px 2px #808080, inset -2px -2px #fff;
+  cursor: default;
+}
+
+.noticia h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #000080;
+  border-bottom: 2px solid #fff;
+  padding: 3px 5px;
+  background-color: #c0c0c0;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #808080;
+}
+
+.noticia h2::before {
+  content: "📰";
+  margin-right: 5px;
+}
+
+.noticia p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+/* ======== VENTANA RETRO ======== */
+.ventana-retro, 
+.ventana-retro-gallery {
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #fff inset, -2px -2px 0 #808080 inset;
+}
+
+.ventana-retro-gallery {
+  width: 35%;
+  margin: 40px auto 40px 20px;
+}
+
+/* ======== BARRA DE TÍTULO ======== */
+.barra-titulo {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #808080;
+  user-select: none;
+}
+
+.titulo {
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+/* ======== BOTONES ======== */
+.botones,
+.botones-ventana {
+  display: flex;
+  gap: 3px;
+}
+
+.botones button,
+.boton-retro {
+  width: 18px;
+  height: 18px;
+  background-color: #c0c0c0;
+  border: 2px outset #fff;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #fff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.botones button:active,
+.boton-retro:active {
+  border: 2px inset #fff;
+  box-shadow: inset 1px 1px #404040, inset -1px -1px #fff;
+}
+
+.btn-min::before { content: "_"; top: -2px; }
+.btn-max::before { content: "□"; top: -1px; }
+.btn-close::before { content: "×"; top: -1px; }
+.btn-min::before, .btn-max::before, .btn-close::before {
+  font-weight: bold;
+  position: relative;
+}
+
+/* ======== CONTENIDO RETRO ======== */
+.contenido-retro {
+  padding: 15px;
+  background-color: #bfbfbf;
+  border: 2px solid;
+  border-color: #fff #808080 #808080 #fff;
+}
+
+/* ======== GALERÍA ======== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.gallery img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #000;
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #808080;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.gallery img:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* ======== CANCIONES ======== */
+.canciones {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.canciones h2 {
+  color: #004aad;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.canciones ol {
+  padding-left: 30px;
+}
+
+.canciones li {
+  background: #f6f8ff;
+  border-left: 4px solid #004aad;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.canciones li:hover {
+  background: #eaf1ff;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 700px) {
+  .container-intro h1 { font-size: 1.8rem; }
+  .gallery img { width: 130px; height: 130px; }
+}
+
+/* ======== MODAL ======== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header {
+  width: 100%;
+  background-color: #000080;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+}
+
+.modal-header .cerrar {
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  width: 25px;
+  height: 25px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal-header .cerrar:hover {
+  background-color: red;
+  color: #fff;
+}
+
+.modal-contenido {
+  max-width: 25%;
+  max-height: 25%;
+  position: relative;
+  transform: translate(-15%, -100%);
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: 4px 4px #888;
+}
+
+.modal-contenido img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.cerrar {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #c0c0c0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar:hover {
+  background-color: #000080;
+  color: #fff;
+}
+
+/* ======== BOTONES MODAL ======== */
+.btn-navegar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  font-size: 30px;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-navegar:hover {
+  background-color: #fff;
+}
+
+#btnAnterior { left: 10px; }
+#btnSiguiente { right: 10px; }
+
+/* ======== TABLA WINDOWS ======== */
+#tablaCanciones {
+  border-collapse: collapse;
+  width: 20%;
+  margin: 20px 0 20px 2%;
+  font-family: "Tahoma", sans-serif;
+  font-size: 14px;
+  background-color: #c0c0c0;
+  border: 2px solid #808080; 
+}
+
+#tablaCanciones thead th {
+  background: linear-gradient(to bottom, #000080, #0000cd);
+  color: #fff;
+  padding: 5px 10px;
+  border-bottom: 2px solid #808080;
+  cursor: pointer;
+  text-align: left;
+}
+
+#tablaCanciones tbody td {
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #fff;
+  padding: 5px 10px;
+}
+
+#tablaCanciones tbody tr:hover td {
+  background-color: #000080;
+  color: #fff;
+}
+
+#toggleCanciones {
+  float: right;
+  font-weight: bold;
+  color: yellow;
+  cursor: pointer;
+}
+
+/* ======== REPRODUCTOR RETRO ======== */
+.reproductor-musica {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  position: fixed;
+  left: 65%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.reproductor-retro {
+  background-color: #c0c0c0;
+  border: 2px solid #808080;
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #808080;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.titulo-cancion {
+  background-color: #000080;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  border: 2px solid #fff;
+  box-shadow: inset 2px 2px #808080, inset -2px -2px #fff;
+  font-size: 14px;
+}
+
+.controles-cancion audio {
+  width: 100%;
+  outline: 2px solid #808080;
+  background-color: #c0c0c0;
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #808080;
+}
+
+/* ======== MENÚS HEADER / FOOTER ======== */
+.barra-menu {
+  background-color: #c0c0c0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 0;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+}
+
+.barra-menu a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 2px solid transparent;
+  transition: all 0.1s;
+}
+
+.barra-menu a:hover {
+  border: 2px solid #000;
+  background-color: #000080;
+  color: #fff;
+}
+
+.icono-menu {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+}
+
+.footer-retro {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-titulo { font-size: 0.85rem; padding: 3px 6px; }
+.footer-menu { justify-content: center; padding: 3px 0; font-size: 0.85rem; }
+
+/* ======== RESPONSIVE MENÚ ======== */
+@media (max-width: 768px) {
+  .barra-menu { flex-direction: column; gap: 5px; padding: 8px 0; }
+  .barra-menu a { width: 100%; justify-content: center; }
+  .footer-menu { flex-wrap: wrap; padding: 5px 0; }
+}
+
+/* ======== FIN DE SEMANA (HEADER Y FOOTER) ======== */
+.header-finde .barra-titulo,
+.footer-finde .barra-titulo {
+  background: linear-gradient(90deg, #ff0000, #ff8000);
+  color: yellow;
+  border-bottom: 2px solid #ffff00;
+}
+
+.header-finde .botones-ventana button,
+.footer-finde .botones-ventana button {
+  background-color: #ffcc00;
+  border: 2px solid #fff;
+  color: #000;
+}
+
+.header-finde .barra-menu,
+.footer-finde .barra-menu {
+  background-color: #000080;
+  border-top: 2px solid #ffff00;
+  border-bottom: 2px solid #ffff00;
+}
+
+.header-finde .barra-menu a,
+.footer-finde .barra-menu a {
+  color: yellow;
+}
+
+.header-finde .barra-menu a:hover,
+.footer-finde .barra-menu a:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+
+
+
+
+/* ======== VENTANA WINDOWS 95 ======== */
+.ventana-win95 {
+  width: 280px;
+  margin: 40px 0 20px 2%;
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #808080;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 13px;
+}
+
+/* ======== BARRA DE TÍTULO ======== */
+.barra-titulo-win95 {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #808080;
+  user-select: none;
+}
+
+.titulo-win95 {
+  letter-spacing: 0.3px;
+}
+
+/* ======== BOTONES DE VENTANA ======== */
+.botones-win95 {
+  display: flex;
+  gap: 3px;
+}
+
+.btn-win95 {
+  width: 18px;
+  height: 18px;
+  background-color: #c0c0c0;
+  border: 2px outset #fff;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #fff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 12px;
+  color: #000;
+}
+
+.btn-win95:active {
+  border: 2px inset #fff;
+  box-shadow: inset 1px 1px #404040, inset -1px -1px #fff;
+}
+
+/* ======== CUERPO DEL CONTENIDO ======== */
+.contenido-win95 {
+  padding: 15px 20px;
+  background-color: #bfbfbf;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+}
+
+/* ======== FORMULARIO Y ELEMENTOS ======== */
+.form-win95 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.form-win95 select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 13px;
+  color: #000;
+  background-color: #fff;
+  padding: 3px 25px 3px 6px;
+  border: 2px solid #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+  cursor: pointer;
+  position: relative;
+}
+
+.form-win95 select:hover {
+  background-color: #f3f3f3;
+}
+
+.form-win95 select:focus {
+  outline: 1px dotted #000;
+  background-color: #e5e5e5;
+}
+
+/* ======== BOTÓN CLÁSICO ======== */
+.boton-win95 {
+  background-color: #c0c0c0;
+  border: 2px solid #fff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+  padding: 4px 12px;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.boton-win95:hover {
+  background-color: #dcdcdc;
+}
+
+.boton-win95:active {
+  border: 2px solid #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
+  background-color: #a0a0a0;
+}
+
+/* ======== FLECHA DEL SELECT ======== */
+
+.form-win95::after {
+  font-size: 10px;
+  color: #000;
+  position: absolute;
+  right: 25px;
+  top: 34%;
+  pointer-events: none;
+}
+
+
+/* --- Ventana de error estilo Windows 95 --- */
+.ventana-error-win95 {
+  width: 300px;
+  border: 2px solid #000;
+  background: #C0C0C0;
+  box-shadow: 4px 4px 0 #000;
+  font-family: "Tahoma", sans-serif;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: aparecer 0.2s ease-out;
+}
+
+@keyframes aparecer {
+  from { transform: translate(-50%, -45%); opacity: 0; }
+  to { transform: translate(-50%, -50%); opacity: 1; }
+}
+
+.barra-titulo-error {
+  background: #000080;
+  color: #fff;
+  padding: 4px 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-cerrar-error {
+  background: #C0C0C0;
+  border: 2px solid #fff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.btn-cerrar-error:active {
+  border: 2px solid #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.contenido-error {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  color: #000;
+  background: #C0C0C0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
+.icono-error {
+  width: 32px;
+  height: 32px;
+}
+
+.botones-error {
+  text-align: center;
+  padding: 10px;
+}
+
+.btn-error {
+  background: #C0C0C0;
+  border: 2px solid #fff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 3px 20px;
+  cursor: pointer;
+  font-family: "Tahoma", sans-serif;
+}
+
+.btn-error:active {
+  border: 2px solid #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
